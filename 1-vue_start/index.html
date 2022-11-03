@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Vue Start</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <p>{{desc}}</p>
+      <a :href="twitter.url" :target="twitter.target" :alt="twitter.alt"
+        >{{twitter.title}}</a
+      >
+      <button v-on:click="changeTitle('Birinci buton')">Tıkla1</button>
+      <button v-on:click="changeTitle('Ikinci buton')">Tıkla2</button>
+      <div
+        @mousemove="changeCoords('Coords are changing', $event)"
+        @click="changeTitle('Comes from the box')"
+        class="box"
+      >
+        <span>{{coords.x}}, {{coords.y}}</span>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

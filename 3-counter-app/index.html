@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container bg-white">
+        <div class="flex m-5">
+          <div class="flex flex-col offset-4 p-2">
+            <h3>{{counter}}</h3>
+            <div class="flex justify-center align-center">
+              <button @click="counter++" class="tw-btn-blue">+</button>
+              <button @click="counter--" class="tw-btn-red">-</button>
+              {{getCounterResult}}
+            </div>
+          </div>
+          <div class="flex flex-col offset-4 p-2">
+            <h3>{{counter2}}</h3>
+            <div class="flex justify-center align-center">
+              <button @click="counter2++" class="tw-btn-blue">+</button>
+              <button @click="counter2--" class="tw-btn-red">-</button>
+              {{getCounter2Result}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

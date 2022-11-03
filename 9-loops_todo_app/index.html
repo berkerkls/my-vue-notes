@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+    <style>
+      .completed {
+        background-color: #98f098;
+        color: #444;
+        margin-bottom: 10px;
+        list-style: none;
+        list-style: none;
+        border: 3px solid #777;
+        border-radius: 5px;
+        width: 40%;
+        text-align: center;
+      }
+      .uncompleted {
+        background-color: rgb(246, 140, 140);
+        color: #444;
+        margin-bottom: 10px;
+        list-style: none;
+        border: 3px solid #777;
+        border-radius: 5px;
+        width: 40%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h3>Todo</h3>
+        <input type="text" v-model="todo" @keydown.enter="addToDo" />
+        <button type="submit">Submit</button>
+        <ul v-if="todoList.length > 0">
+          <li
+            v-for="item in todoList"
+            :key="item.id"
+            :class="{completed: item.completed, uncompleted : !item.completed}"
+          >
+            <div>
+              <input type="checkbox" v-model="item.completed" />
+              <label>{{item.text}}</label>
+              <button @click="deleteTodo(item)">Delete</button>
+            </div>
+          </li>
+        </ul>
+        <div v-else>There is nothing to do here yet.</div>
+        <span>{{countCompleted}}</span>
+        <br />
+        <span>{{countUncompleted}}</span>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

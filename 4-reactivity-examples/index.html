@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <div class="input">
+          <input type="text" v-model="search" style="border: 1px solid red" />
+          <br />
+          <button
+            @click="searchFilter()"
+            class="btn"
+            style="background-color: blue; color: #ffff"
+          >
+            Ara
+          </button>
+          <br />
+          <span>{{itemList}}</span>
+          <span>{{filteredList}}</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

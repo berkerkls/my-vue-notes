@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title> 
+  </head>
+  <body>
+    <div id="app">
+      <button @click="showContainer = !showContainer">Open/Close</button>
+      <h1 v-if="!showContainer">First Title</h1>
+      <h1 v-else>Second Title</h1>
+      <span :class="counterBoxClass"
+        >{{counter}}</span
+      >
+      <br>
+        <button style="background-color: green" @click="counter++">Inc</button>
+        <button style="background-color: red" @click="counter--">Dec</button>
+        <h1 v-if="counter < 0">0'dan küçük</h1>
+        <h1 v-else-if="counter > 0">0'dan büyük</h1>
+        <h1 v-else-if="counter === 0">0'a eşit</h1>
+      </th>
+
+      <!-- We can use v-show if we want to keep the attribute inside our dom but add a style as display:none -->
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
